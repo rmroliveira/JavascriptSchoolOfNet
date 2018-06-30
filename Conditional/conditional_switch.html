@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=>, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var num1 = prompt('First number: ')
+        var num2 = prompt('Second number: ')
+        var op = prompt('Operation: ')
+
+        num1 = parseFloat(num1)
+        num2 = parseFloat(num2)
+        
+        switch(op){
+            case '+':
+                console.log(num1 + num2)
+            break;
+            case '-':
+                console.log(num1 - num2)
+            break;
+            case '*':
+                console.log(num1 * num2)
+            break;
+            case '/':
+                console.log(num1 / num2)
+            break;
+            default:
+            console.error('Operation not found!')
+        }
+        
+            
+    </script>
+</body>
+</html>
