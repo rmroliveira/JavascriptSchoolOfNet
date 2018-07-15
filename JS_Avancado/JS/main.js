@@ -37,9 +37,18 @@ function formatDesc(desc){
 }
 
 function formatValue(value){
-    var str = parseFloat(value).toFixed(2);
-    str = "$ "+ value.replace(".", ",")
+    var str = parseFloat(value).toFixed(2) + "";
+    str = "$ "+ str.replace(".", ",")
     return str;
+}
+
+function addData(){
+    var desc = document.getElementById("desc").value;
+    var amount = document.getElementById("amount").value;
+    var value = document.getElementById("value").value;
+
+    list.unshift({"desc":desc, "amount":amount, "value":value})
+    setList(list);
 }
 
 setList(list);
