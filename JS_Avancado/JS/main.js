@@ -23,7 +23,8 @@ function setList(list){
                 '</thead>'+
                 '<tbody>';
     for(var key in list){
-        table += '<tr><td>'+ formatDesc(list[key].desc) +'</td>'+'<td>'+list[key].amount+'</td>'+'<td>'+formatValue(list[key].value)+'</td><td>Edit | Delete</td></tr>';
+        table += '<tr><td>'+ formatDesc(list[key].desc) +'</td>'+'<td>'+list[key].amount+'</td>'+'<td>'+formatValue(list[key].value)+
+        '</td><td><button id onclick="setUpdate('+key+');" class="btn btn-default">Edit</button> <button onclick="resetForm();" class="btn btn-default">Delete</button></td></tr>';
     }
     table += '</tbody>';
     
@@ -52,3 +53,20 @@ function addData(){
 }
 
 setList(list);
+
+function setUpdate(id){
+    var obj = list[id];
+    document.getElementById("desc").value = obj.desc;
+    document.getElementById("amount").value = obj.amount;
+    document.getElementById("value").value = obj.value;
+    document.getElementById("btnUpdate").style.display = "inline-block";
+    document.getElementById("btnAdd").style.display = "none";
+}
+
+function resetForm(){
+    document.getElementById("desc").value = "";
+    document.getElementById("amount").value = "";
+    document.getElementById("value").value = "";
+    document.getElementById("btnUpdate").style.display = "none";
+    document.getElementById("btnAdd").style.display = "inline-block";
+}
