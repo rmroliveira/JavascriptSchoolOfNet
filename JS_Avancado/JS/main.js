@@ -9,9 +9,11 @@ function getTotal(list){
     for(var key in list){
         total += list[key].value * list[key].amount
     }
+
+    document.getElementById("totalValue").innerHTML = formatValue(total);
+
     return total;
 }
-console.log(getTotal(list)); 
 
 function setList(list){
     var table = '<thead>'+
@@ -30,6 +32,8 @@ function setList(list){
     table += '</tbody>';
     
     document.getElementById("listTable").innerHTML = table;
+    
+    getTotal(list);
 }
 
 function formatDesc(desc){
@@ -114,6 +118,7 @@ function deleteData(id){
             list = AIni.concat(AFim);
         }
     }
+    setList(list);
 
 }
 
